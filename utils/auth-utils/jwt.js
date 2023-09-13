@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const { modelNames } = require("mongoose");
 
 // Create JWT function
-const createJWT = ({ payload }) => {
+const createJWT = (payload) => {
   const token = jwt.sign(payload, process.env.JWT_SECRET)
   return token;
 }
