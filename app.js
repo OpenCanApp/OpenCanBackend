@@ -29,6 +29,9 @@ const connectDB = require("./db/connect");
 // Router
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+
+// Middleware
+const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
 // ---------- Middlewares ----------
 let app = express();
 
@@ -38,7 +41,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, "public")));
 
-// Server Listening
+// Routing
+app.use("/api/error", (req, res) => {
+  
+})
+// Not Found Handler
+app.use(notFoundMiddleware);
+// Error Handler
+app.use(errorHandlerMiddleware);
+
+// ---------- Server Listening ---------
 const port = process.env.PORT || 5000;
 
 const start = async () => {
