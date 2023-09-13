@@ -15,36 +15,44 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-
 // Passport
 const passport = require("passport");
 const session = require("express-session");
-
 // Security Packages
 const cors = require("cors");
-
 // MongoDB
 const connectDB = require("./db/connect");
-
 // Router
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-
+const { authRouter, userRouter } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
+
 // ---------- Middlewares ----------
 let app = express();
-
+// Passport
+require("./configs/passport");
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: process.env.NODE_ENV === "production" },
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(fileUpload({ useTempFiles: true }));
+app.use(express.static("./public"));
 
 // Routing
-app.use("/api/error", (req, res) => {
-  
-})
+app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
+
 // Not Found Handler
 app.use(notFoundMiddleware);
 // Error Handler
