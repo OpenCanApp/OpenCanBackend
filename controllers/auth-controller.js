@@ -10,4 +10,11 @@ const googleLogin = async (req, res) => {
   res.status(StatusCodes.OK).json({ user: tokenUser, token });
 };
 
-module.exports = { googleLogin };
+const facebookLogin = async (req, res) => {
+  const tokenUser = createTokenUser(req.user);
+  const token = createJWT(tokenUser);
+
+  res.status(StatusCodes.OK).json({ user: tokenUser, token });
+};
+
+module.exports = { googleLogin, facebookLogin };
