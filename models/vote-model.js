@@ -14,18 +14,28 @@ const VoteSchema = new mongoose.Schema(
     },
     safety: {
       type: Number,
+      min: 0,
+      max: 5,
     },
     transport: {
       type: Number,
+      min: 0,
+      max: 5,
     },
     shopping: {
       type: Number,
+      min: 0,
+      max: 5,
     },
     foods: {
       type: Number,
+      min: 0,
+      max: 5,
     },
     rent: {
       type: Number,
+      min: 0,
+      max: 5,
     },
   },
   {

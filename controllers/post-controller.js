@@ -8,7 +8,7 @@ const createPost = async (req, res) => {
   const { category, content } = req.body;
 
   // Check is it telegram link
-  if (category === "tg link" && !content.startsWith("https://t.me/")) {
+  if (category === "tg link" && !content.includes("https://t.me/")) {
     throw new CustomError.BadRequestError(`Please provide valid telegram link`);
   }
 
