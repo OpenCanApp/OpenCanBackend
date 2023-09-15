@@ -56,6 +56,10 @@ app.use(fileUpload({ useTempFiles: true }));
 app.use(express.static("./public"));
 
 // Routing
+app.get("/login-page", (req, res) => {
+  const publicPath = path.join(__dirname, "public");
+  res.sendFile(path.join(publicPath, "login-page.html"));
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
