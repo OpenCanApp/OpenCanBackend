@@ -28,6 +28,7 @@ const {
   userRouter,
   postRouter,
   districtRouter,
+  voteRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -59,6 +60,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
 app.use("/api/district", districtRouter);
+app.use("/api/vote", voteRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
