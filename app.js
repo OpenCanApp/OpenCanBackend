@@ -23,7 +23,12 @@ const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
 // Router
-const { authRouter, userRouter, postRouter } = require("./routes");
+const {
+  authRouter,
+  userRouter,
+  postRouter,
+  districtRouter,
+} = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
 
@@ -53,6 +58,7 @@ app.use(express.static("./public"));
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
+app.use("/api/district", districtRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
