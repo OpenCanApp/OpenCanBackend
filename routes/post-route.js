@@ -9,6 +9,7 @@ const {
   deletePost,
   getAllPostsAsAdmin,
 } = require("../controllers").postController;
+
 const {
   authenticationMiddleware,
   permissionsMiddleware,

@@ -11,7 +11,6 @@ const auth = async (req, res, next) => {
   }
 
   const token = authHeader.split(" ")[1];
-  console.log(`token ${token}`);
   try {
     const payload = decryptJWT(token);
     req.user = {
