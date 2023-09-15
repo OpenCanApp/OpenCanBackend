@@ -3,4 +3,5 @@ module.exports = {
   userRouter: require("./user.route"),
   postRouter: require("./post-route"),
   districtRouter: require("./district-route"),
+  voteRouter: require("./vote-route"),
 };
