@@ -4,4 +4,5 @@ module.exports = {
   postController: require("./post-controller"),
   districtController: require("./district-controller"),
   voteController: require("./vote-controller"),
+  newsController: require("./news-controller"),
 };

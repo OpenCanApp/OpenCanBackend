@@ -15,13 +15,16 @@ const PostSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-      enum: ["tg link", "second hand", "special"],
-      required: [true, "Please provide category"]
+      enum: ["link", "second hand", "special"],
+      required: [true, "Please provide category"],
+    },
+    tag: {
+      type: [String],
     },
     user: {
       type: mongoose.Types.ObjectId,
       ref: "User",
-      required: [true, "Please provide User Id"]
+      required: [true, "Please provide User Id"],
     },
     image: {
       type: String,
@@ -36,4 +39,4 @@ const PostSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Post", PostSchema)
+module.exports = mongoose.model("Post", PostSchema);
