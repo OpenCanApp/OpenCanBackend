@@ -22,6 +22,8 @@ const session = require("express-session");
 const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
+// Get News Method
+const { getNews } = require("./utils");
 // Router
 const {
   authRouter,
@@ -29,6 +31,7 @@ const {
   postRouter,
   districtRouter,
   voteRouter,
+  newsRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -65,6 +68,7 @@ app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
 app.use("/api/district", districtRouter);
 app.use("/api/vote", voteRouter);
+app.use("/api/news", newsRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
@@ -81,6 +85,11 @@ const start = async () => {
     app.listen(port, () => {
       console.log(`The server is running on port: ${port}`);
     });
+
+    await getNews();
+    setInterval(async () => {
+      await getNews();
+    }, 30 * 60 * 1000);
   } catch (err) {
     console.log(err);
   }
