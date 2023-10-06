@@ -22,8 +22,8 @@ const session = require("express-session");
 const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
-// Get News Method
-const { getNews } = require("./utils");
+// Get News, Currency Rates Method
+const { getNews, getCurrencyRate } = require("./utils");
 // Router
 const {
   authRouter,
@@ -87,10 +87,17 @@ const start = async () => {
     });
 
     await getNews();
+    await getCurrencyRate();
+
     setInterval(async () => {
       await getNews();
-    }, 30 * 60 * 1000);
-  } catch (err) {
+    }, 30 * 60 * 1000); // 1 hour
+
+    setInterval(async() => {
+      await getCurrencyRate();
+    }, 2 * 60 * 60 * 1000); // 2 hours
+  } 
+  catch (err) {
     console.log(err);
   }
 };
