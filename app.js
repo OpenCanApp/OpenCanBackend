@@ -32,6 +32,7 @@ const {
   districtRouter,
   voteRouter,
   newsRouter,
+  currencyRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -69,6 +70,7 @@ app.use("/api/post", postRouter);
 app.use("/api/district", districtRouter);
 app.use("/api/vote", voteRouter);
 app.use("/api/news", newsRouter);
+app.use("/api/currency", currencyRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
