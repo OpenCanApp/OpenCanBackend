@@ -5,4 +5,5 @@ module.exports = {
   districtController: require("./district-controller"),
   voteController: require("./vote-controller"),
   newsController: require("./news-controller"),
+  currencyController: require("./currency-controller"),
 };

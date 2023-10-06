@@ -22,8 +22,8 @@ const session = require("express-session");
 const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
-// Get News Method
-const { getNews } = require("./utils");
+// Get News, Currency Rates Method
+const { getNews, getCurrencyRate } = require("./utils");
 // Router
 const {
   authRouter,
@@ -32,6 +32,7 @@ const {
   districtRouter,
   voteRouter,
   newsRouter,
+  currencyRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -69,6 +70,7 @@ app.use("/api/post", postRouter);
 app.use("/api/district", districtRouter);
 app.use("/api/vote", voteRouter);
 app.use("/api/news", newsRouter);
+app.use("/api/currency", currencyRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
@@ -87,10 +89,17 @@ const start = async () => {
     });
 
     await getNews();
+    await getCurrencyRate();
+
     setInterval(async () => {
       await getNews();
-    }, 30 * 60 * 1000);
-  } catch (err) {
+    }, 30 * 60 * 1000); // 1 hour
+
+    setInterval(async() => {
+      await getCurrencyRate();
+    }, 2 * 60 * 60 * 1000); // 2 hours
+  } 
+  catch (err) {
     console.log(err);
   }
 };
