@@ -7873,7 +7873,10 @@
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-
+    background-color: #000009;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px
   }
 
   .carousel-indicators .active {
@@ -8441,6 +8444,28 @@
               <li><a class=endpoint_menu href=#jump-Currency-GetCurrencyRates>Get Currency Rates</a>
               <li><a class=endpoint_menu href=#jump-Currency-GetSingleCurrencyRate>Get Single Currency Rate</a>
             </ul>
+          <li><strong><a href=#Doucment>Doucment</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-Doucment-GetAllDocuments>Get All Documents</a>
+              <li><a class=endpoint_menu href=#jump-Doucment-CreateDocument_28OnlyAdmin_29>Create Document (Only
+                  Admin)</a>
+              <li><a class=endpoint_menu href=#jump-Doucment-GetSingleDocuments>Get Single Documents</a>
+              <li><a class=endpoint_menu href=#jump-Doucment-UpdateADocument_28OnlyAdmin_29>Update A Document (Only
+                  Admin)</a>
+              <li><a class=endpoint_menu href=#jump-Doucment-DeleteADocument_28OnlyAdmin_29>Delete A Document (Only
+                  Admin)</a>
+            </ul>
+          <li><strong><a href=#Location>Location</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-Location-GetAllLocations>Get All Locations</a>
+              <li><a class=endpoint_menu href=#jump-Location-CreateLocation_28OnlyAdmin_29>Create Location (Only
+                  Admin)</a>
+              <li><a class=endpoint_menu href=#jump-Location-GetSingleLocation>Get Single Location</a>
+              <li><a class=endpoint_menu href=#jump-Location-UpdateADocument_28OnlyAdmin_29>Update A Document (Only
+                  Admin)</a>
+              <li><a class=endpoint_menu href=#jump-Location-DeleteADocument_28OnlyAdmin_29>Delete A Document (Only
+                  Admin)</a>
+            </ul>
         </ul>
       </div>
       <div class=col-md-9>
@@ -8461,7 +8486,7 @@
                           User</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/user/show-me
+                        https://opencan-backend.onrender.com/api/user/show-me
                       </h4>
                     </a></div>
                   <div id=collapse-User-ShowCurrentUser class="panel-collapse collapse">
@@ -8476,8 +8501,7 @@
                         <tbody>
                           <tr>
                             <td>Authorization
-                            <td>Bearer
-                              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3BlbkNhbiIsInVzZXJJZCI6IjY1MDEyNGM0MGUxODE0NmRlMmY5YWFmZiIsImVtYWlsIjoib3BlbmNhbmFwcEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImF2YXRhciI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tvYXhTdHRwTjVRd2xnUm51Z251WWhEQVJCOHktLWdYVDZkZi1qNWdidz1zOTYtYyIsImlhdCI6MTY5NDU3NjQ0NH0.nqkFNckxbhq6zMullmoh6uioaYABvYvENKjZvQze060
+                            <td>Bearer {{Auth}}
                             <td>
                       </table>
                     </div>
@@ -8504,7 +8528,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/post
+                        https://opencan-backend.onrender.com/api/post
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetAllPosts class="panel-collapse collapse">
@@ -8519,8 +8543,7 @@
                         <tbody>
                           <tr>
                             <td>Authorization
-                            <td>Bearer
-                              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3BlbkNhbiIsInVzZXJJZCI6IjY1MDM1YjIwMzk3NTQ5Y2E5Y2ZiYjhlOSIsImVtYWlsIjoib3BlbmNhbmFwcEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImF2YXRhciI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tvYXhTdHRwTjVRd2xnUm51Z251WWhEQVJCOHktLWdYVDZkZi1qNWdidz1zOTYtYyIsImlhdCI6MTY5NDcyNjM2Mn0.y4MMSQLnOkkh2RuLZUsSIkNiqtxwC-6f57zpl1xok9c
+                            <td>Bearer {{Auth}}
                             <td>
                       </table>
                     </div>
@@ -8534,7 +8557,7 @@
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/post/show-all
+                        https://opencan-backend.onrender.com/api/post/show-all
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetAllPostsAsAdmin_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8563,7 +8586,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        localhost:5000/api/post/
+                        https://opencan-backend.onrender.com/api/post/
                       </h4>
                     </a>
                   </div>
@@ -8579,8 +8602,7 @@
                         <tbody>
                           <tr>
                             <td>Authorization
-                            <td>Bearer
-                              eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiT3BlbkNhbiIsInVzZXJJZCI6IjY1MDM1YjIwMzk3NTQ5Y2E5Y2ZiYjhlOSIsImVtYWlsIjoib3BlbmNhbmFwcEBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImF2YXRhciI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FDZzhvY0tvYXhTdHRwTjVRd2xnUm51Z251WWhEQVJCOHktLWdYVDZkZi1qNWdidz1zOTYtYyIsImlhdCI6MTY5NDcyNjM2Mn0.y4MMSQLnOkkh2RuLZUsSIkNiqtxwC-6f57zpl1xok9c
+                            <td>Bearer {{Auth}}
                             <td>
                       </table>
                       <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
@@ -8599,11 +8621,25 @@
                           Post</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/post/65037c99676a4cda21fea62f
+                        https://opencan-backend.onrender.com/api/post/65037c99676a4cda21fea62f
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetSinglePost class="panel-collapse collapse">
-                    <div class=panel-body></div>
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <div class="panel panel-warning" id=jump-Post-UpdatePost_28OnlyAdmin_29>
@@ -8614,7 +8650,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        localhost:5000/api/post/6503859fa22714048e07d4a3
+                        https://opencan-backend.onrender.com/api/post/6503859fa22714048e07d4a3
                       </h4>
                     </a>
                   </div>
@@ -8647,7 +8683,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        localhost:5000/api/post/65037c99676a4cda21fea62f
+                        https://opencan-backend.onrender.com/api/post/65037c99676a4cda21fea62f
                       </h4>
                     </a></div>
                   <div id=collapse-Post-DeletePost_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8689,7 +8725,7 @@
                           Districts</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/district
+                        https://opencan-backend.onrender.com/api/district
                       </h4>
                     </a></div>
                   <div id=collapse-District-GetAllDistricts class="panel-collapse collapse">
@@ -8704,7 +8740,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        localhost:5000/api/district
+                        https://opencan-backend.onrender.com/api/district
                       </h4>
                     </a>
                   </div>
@@ -8737,7 +8773,7 @@
                           District</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/district/6504a369da535ddae4e791ca
+                        https://opencan-backend.onrender.com/api/district/6504a369da535ddae4e791ca
                       </h4>
                     </a></div>
                   <div id=collapse-District-GetSingleDistrict class="panel-collapse collapse">
@@ -8752,7 +8788,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        localhost:5000/api/district/65049b67a183563724d9c052
+                        https://opencan-backend.onrender.com/api/district/65049b67a183563724d9c052
                       </h4>
                     </a>
                   </div>
@@ -8786,7 +8822,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        localhost:5000/api/district/65049b67a183563724d9c052
+                        https://opencan-backend.onrender.com/api/district/65049b67a183563724d9c052
                       </h4>
                     </a></div>
                   <div id=collapse-District-DeleteDistrict_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8828,7 +8864,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/vote
+                        https://opencan-backend.onrender.com/api/vote
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-GetAllVotes_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8857,7 +8893,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        localhost:5000/api/vote
+                        https://opencan-backend.onrender.com/api/vote
                       </h4>
                     </a>
                   </div>
@@ -8895,7 +8931,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/vote/6504b681e291b74698149aa3
+                        https://opencan-backend.onrender.com/api/vote/6504b681e291b74698149aa3
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-GetSingleVote_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8923,7 +8959,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        localhost:5000/api/vote/1ui2g3i12g3u12
+                        https://opencan-backend.onrender.com/api/vote/1ui2g3i12g3u12
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-DeleteVote_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8965,11 +9001,25 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/news
+                        https://opencan-backend.onrender.com/api/news
                       </h4>
                     </a></div>
                   <div id=collapse-News-GetNews class="panel-collapse collapse">
-                    <div class=panel-body></div>
+                    <div class=panel-body>
+                      <h5 class="label label-info">Query</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>category
+                            <td>British-Columbia-News
+                            <td>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -8993,7 +9043,7 @@
                           Rates</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/currency/
+                        https://opencan-backend.onrender.com/api/currency/
                       </h4>
                     </a></div>
                   <div id=collapse-Currency-GetCurrencyRates class="panel-collapse collapse">
@@ -9008,11 +9058,339 @@
                           Rate</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        localhost:5000/api/currency/hkd
+                        https://opencan-backend.onrender.com/api/currency/hkd
                       </h4>
                     </a></div>
                   <div id=collapse-Currency-GetSingleCurrencyRate class="panel-collapse collapse">
                     <div class=panel-body></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
+            <h3 class=panel-title id=Doucment>Doucment
+              <span class=badge>5</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-Doucment>
+                <div class="panel panel-info" id=jump-Doucment-GetAllDocuments>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Doucment href=#collapse-Doucment-GetAllDocuments>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All
+                          Documents</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Doucment-GetAllDocuments class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-info">Query</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>topic
+                            <td>study-permit
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-success" id=jump-Doucment-CreateDocument_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-success data-toggle=collapse data-parent=#accordion-Doucment
+                      href=#collapse-Doucment-CreateDocument_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Create Document (Only
+                          Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-success">POST</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document/
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Doucment-CreateDocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;topic&#34;: &#34;study-permit&#34;,
+                        &#34;content&#34;: &#34;&lt;h2&gt;申請學簽&lt;/h2&gt;&lt;p&gt;先於加拿大政府網站申請IRCC 安全帳戶(GC Key
+                        Account)用以跟進申請及提交以下文件:&lt;/p&gt;&#34;
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Doucment-GetSingleDocuments>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-info data-toggle=collapse data-parent=#accordion-Doucment
+                      href=#collapse-Doucment-GetSingleDocuments>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          Documents</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document/6528b96c4375df0a81c36c35
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Doucment-GetSingleDocuments class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-warning" id=jump-Doucment-UpdateADocument_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-warning data-toggle=collapse data-parent=#accordion-Doucment
+                      href=#collapse-Doucment-UpdateADocument_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update A Document
+                          (Only Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-warning">PATCH</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document/6528bbf8ed6eacad18e1c3dc
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Doucment-UpdateADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;content&#34;:
+                        &#34;&lt;h2&gt;報讀心儀學校!!&lt;/h2&gt;&lt;p&gt;先比較不同地區的院校課程，了解入學條件和要求主要於1月、5月及9月為開學季如得到學院取錄便會收到LOA(Letter
+                        of Acceptance)通知書&lt;/p&gt;&#34;
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-danger" id=jump-Doucment-DeleteADocument_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-danger data-toggle=collapse data-parent=#accordion-Doucment
+                      href=#collapse-Doucment-DeleteADocument_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Delete A Document
+                          (Only Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-danger">DELETE</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document/6528b7ff4375df0a81c36c2d
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Doucment-DeleteADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;version&#34;: 1,
+                        &#34;topic&#34;: &#34;study permit&#34;,
+                        &#34;content&#34;:
+                        &#34;&lt;h2&gt;報讀心儀學校&lt;/h2&gt;&lt;p&gt;先比較不同地區的院校課程，了解入學條件和要求主要於1月、5月及9月為開學季如得到學院取錄便會收到LOA(Letter
+                        of Acceptance)通知書&lt;/p&gt;&#34;,
+                        &#34;order&#34;: 1
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
+            <h3 class=panel-title id=Location>Location
+              <span class=badge>5</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-Location>
+                <div class="panel panel-info" id=jump-Location-GetAllLocations>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Location href=#collapse-Location-GetAllLocations>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All
+                          Locations</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/location
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Location-GetAllLocations class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-success" id=jump-Location-CreateLocation_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-success data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-CreateLocation_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Create Location (Only
+                          Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-success">POST</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/location/
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Location-CreateLocation_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;topic&#34;: &#34;CN Tower&#34;,
+                        &#34;description&#34;: &#34;TV Tower&#34;,
+                        &#34;category&#34;: &#34;attractions&#34;,
+                        &#34;province&#34;: &#34;ON&#34;,
+                        &#34;city&#34;: &#34;Toronto&#34;,
+                        &#34;coordinate&#34;: {
+                        &#34;lat&#34;: 43.642566,
+                        &#34;long&#34;: -79.387057
+                        }
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Location-GetSingleLocation>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-info data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-GetSingleLocation>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          Location</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/location/6528d82799b76ce1c5d3a363
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Location-GetSingleLocation class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-warning" id=jump-Location-UpdateADocument_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-warning data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-UpdateADocument_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update A Document
+                          (Only Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-warning">PATCH</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/location/6528dd77e1f3565899f3e977
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Location-UpdateADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;description&#34;: &#34;TV Tower in Downtown of Toronto&#34;
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-danger" id=jump-Location-DeleteADocument_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-danger data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-DeleteADocument_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Delete A Document
+                          (Only Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-danger">DELETE</strong>
+                        &nbsp;
+                        https://opencan-backend.onrender.com/api/document/6528dd77e1f3565899f3e977
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Location-DeleteADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;version&#34;: 1,
+                        &#34;topic&#34;: &#34;study permit&#34;,
+                        &#34;content&#34;:
+                        &#34;&lt;h2&gt;報讀心儀學校&lt;/h2&gt;&lt;p&gt;先比較不同地區的院校課程，了解入學條件和要求主要於1月、5月及9月為開學季如得到學院取錄便會收到LOA(Letter
+                        of Acceptance)通知書&lt;/p&gt;&#34;,
+                        &#34;order&#34;: 1
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -9028,7 +9406,7 @@
     <div class=container-fluid>
       <div class="span12 text-center"><span data-toggle=tooltip
           title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Generated
-          at 2023-10-06 15:47:53 by <a href=https://github.com/thedevsaddam/docgen target=_blank
+          at 2023-10-13 16:08:35 by <a href=https://github.com/thedevsaddam/docgen target=_blank
             class=text-muted>docgen</a></span></div>
     </div>
   </footer>

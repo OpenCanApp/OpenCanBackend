@@ -14,7 +14,14 @@ const {
   permissionsMiddleware,
 } = require("../middlewares");
 
-router.route("/").get(getAllDocuments).post(createDocument);
+router
+  .route("/")
+  .get(getAllDocuments)
+  .post(
+    authenticationMiddleware,
+    permissionsMiddleware("admin"),
+    createDocument
+  );
 
 router
   .route("/:id")
