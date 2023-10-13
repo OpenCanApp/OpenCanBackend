@@ -19,6 +19,9 @@ const NewsSchema = new mongoose.Schema(
     date: {
       type: Date,
     },
+    category: {
+      type: String,
+    }
   },
   {
     timestamps: true,
@@ -27,6 +30,7 @@ const NewsSchema = new mongoose.Schema(
 
 NewsSchema.statics.removeAllNews = async function () {
   await this.deleteMany({});
+  console.log("Remote all the outdated news")
 };
 
 module.exports = mongoose.model("News", NewsSchema);
