@@ -7,4 +7,5 @@ module.exports = {
   newsController: require("./news-controller"),
   currencyController: require("./currency-controller"),
   documentController: require("./document-controller"),
+  locationController: require("./location-controller"),
 };

@@ -14,15 +14,20 @@ const {
   permissionsMiddleware,
 } = require("../middlewares");
 
-router
-  .route("/")
-  .get(getAllDocuments)
-  .post(createDocument);
+router.route("/").get(getAllDocuments).post(createDocument);
 
 router
   .route("/:id")
   .get(getSingleDocument)
-  .patch(authenticationMiddleware, permissionsMiddleware("admin"), updateDocument)
-  .delete(authenticationMiddleware, permissionsMiddleware("admin"), deleteDocument)
+  .patch(
+    authenticationMiddleware,
+    permissionsMiddleware("admin"),
+    updateDocument
+  )
+  .delete(
+    authenticationMiddleware,
+    permissionsMiddleware("admin"),
+    deleteDocument
+  );
 
-module.exports = router;  
+module.exports = router;
