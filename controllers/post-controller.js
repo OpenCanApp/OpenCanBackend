@@ -69,7 +69,6 @@ const getAllPosts = async (req, res) => {
 
 const updatePost = async (req, res) => {
   const { id: postId } = req.params;
-  console.log(postId);
   const post = await Post.findOne({ _id: postId });
 
   if (!post) {

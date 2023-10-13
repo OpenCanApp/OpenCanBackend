@@ -3,9 +3,7 @@ const CustomError = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 
 const getAllCurrencyRates = async (req, res) => {
-  console.log("All Currency Rate")
   const rates = await Currency.find({});
-
   return res.status(StatusCodes.OK).json({ rates, count: rates.length });
 };
 
