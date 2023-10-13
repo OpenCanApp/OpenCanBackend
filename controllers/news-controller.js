@@ -3,7 +3,10 @@ const CustomError = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 
 const getNews = async (req, res) => {
-  const news = await News.find({}).sort("-date");
+  const { category } = req.query;
+  let queryObject ={};
+  if (category) queryObject.category = category.replace(/-/g, " ");
+  const news = await News.find(queryObject).sort("-date");
 
   return res.status(StatusCodes.OK).json({ news, count: news.length });
 };

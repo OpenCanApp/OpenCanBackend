@@ -90,16 +90,16 @@ const start = async () => {
       console.log(`The server is running on port: ${port}`);
     });
 
-    // await getNews();
-    // await getCurrencyRate();
+    await getNews();
+    await getCurrencyRate();
 
-    // setInterval(async () => {
-    //   await getNews();
-    // }, 30 * 60 * 1000); // 1 hour
+    setInterval(async () => {
+      await getNews();
+    }, 30 * 60 * 1000); // 1 hour
 
-    // setInterval(async() => {
-    //   await getCurrencyRate();
-    // }, 2 * 60 * 60 * 1000); // 2 hours
+    setInterval(async() => {
+      await getCurrencyRate();
+    }, 2 * 60 * 60 * 1000); // 2 hours
   } 
   catch (err) {
     console.log(err);
