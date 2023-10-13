@@ -30,6 +30,7 @@ const newsArr = [
   "canada-north",
   "canada-ottawa",
 ];
+
 const getSingleCategoryNews = async (category) => {
   const response = await axios.get(
     `${process.env.XML_PARSER}=${process.env.NEWS_LINK}${category}`
