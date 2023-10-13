@@ -5,5 +5,6 @@ module.exports = {
   Vote: require("./vote-model"),
   News: require("./news-model"),
   Currency: require("./currency-model"),
-  Document: require("./document-model")
+  Document: require("./document-model"),
+  Location: require("./location-model"),
 };

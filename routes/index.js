@@ -6,5 +6,6 @@ module.exports = {
   voteRouter: require("./vote-route"),
   newsRouter: require("./news-route"),
   currencyRouter: require("./currency-route"),
-  documentRouter: require("./document-route")
+  documentRouter: require("./document-route"),
+  locationRouter: require("./location-route")
 };
