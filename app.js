@@ -33,6 +33,7 @@ const {
   voteRouter,
   newsRouter,
   currencyRouter,
+  documentRouter
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -71,6 +72,7 @@ app.use("/api/district", districtRouter);
 app.use("/api/vote", voteRouter);
 app.use("/api/news", newsRouter);
 app.use("/api/currency", currencyRouter);
+app.use("/api/document", documentRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
@@ -88,16 +90,16 @@ const start = async () => {
       console.log(`The server is running on port: ${port}`);
     });
 
-    await getNews();
-    await getCurrencyRate();
+    // await getNews();
+    // await getCurrencyRate();
 
-    setInterval(async () => {
-      await getNews();
-    }, 30 * 60 * 1000); // 1 hour
+    // setInterval(async () => {
+    //   await getNews();
+    // }, 30 * 60 * 1000); // 1 hour
 
-    setInterval(async() => {
-      await getCurrencyRate();
-    }, 2 * 60 * 60 * 1000); // 2 hours
+    // setInterval(async() => {
+    //   await getCurrencyRate();
+    // }, 2 * 60 * 60 * 1000); // 2 hours
   } 
   catch (err) {
     console.log(err);

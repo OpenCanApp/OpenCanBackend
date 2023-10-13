@@ -7873,6 +7873,7 @@
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
+
   }
 
   .carousel-indicators .active {
@@ -8431,6 +8432,15 @@
               <li><a class=endpoint_menu href=#jump-Vote-GetSingleVote_28OnlyAdmin_29>Get Single Vote (Only Admin)</a>
               <li><a class=endpoint_menu href=#jump-Vote-DeleteVote_28OnlyAdmin_29>Delete Vote (Only Admin)</a>
             </ul>
+          <li><strong><a href=#News>News</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-News-GetNews>Get News</a>
+            </ul>
+          <li><strong><a href=#Currency>Currency</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-Currency-GetCurrencyRates>Get Currency Rates</a>
+              <li><a class=endpoint_menu href=#jump-Currency-GetSingleCurrencyRate>Get Single Currency Rate</a>
+            </ul>
         </ul>
       </div>
       <div class=col-md-9>
@@ -8451,7 +8461,7 @@
                           User</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/user/show-me
+                        localhost:5000/api/user/show-me
                       </h4>
                     </a></div>
                   <div id=collapse-User-ShowCurrentUser class="panel-collapse collapse">
@@ -8494,7 +8504,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/post
+                        localhost:5000/api/post
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetAllPosts class="panel-collapse collapse">
@@ -8524,7 +8534,7 @@
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/post/show-all
+                        localhost:5000/api/post/show-all
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetAllPostsAsAdmin_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8553,7 +8563,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        {{BASICURL}}/post/
+                        localhost:5000/api/post/
                       </h4>
                     </a>
                   </div>
@@ -8589,7 +8599,7 @@
                           Post</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/post/65037c99676a4cda21fea62f
+                        localhost:5000/api/post/65037c99676a4cda21fea62f
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetSinglePost class="panel-collapse collapse">
@@ -8604,7 +8614,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        {{BASICURL}}/post/6503859fa22714048e07d4a3
+                        localhost:5000/api/post/6503859fa22714048e07d4a3
                       </h4>
                     </a>
                   </div>
@@ -8637,7 +8647,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        {{BASICURL}}/post/65037c99676a4cda21fea62f
+                        localhost:5000/api/post/65037c99676a4cda21fea62f
                       </h4>
                     </a></div>
                   <div id=collapse-Post-DeletePost_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8679,7 +8689,7 @@
                           Districts</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/district
+                        localhost:5000/api/district
                       </h4>
                     </a></div>
                   <div id=collapse-District-GetAllDistricts class="panel-collapse collapse">
@@ -8694,7 +8704,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        {{BASICURL}}/district
+                        localhost:5000/api/district
                       </h4>
                     </a>
                   </div>
@@ -8727,7 +8737,7 @@
                           District</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/district/65049b67a183563724d9c052
+                        localhost:5000/api/district/6504a369da535ddae4e791ca
                       </h4>
                     </a></div>
                   <div id=collapse-District-GetSingleDistrict class="panel-collapse collapse">
@@ -8742,7 +8752,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        {{BASICURL}}/district/65049b67a183563724d9c052
+                        localhost:5000/api/district/65049b67a183563724d9c052
                       </h4>
                     </a>
                   </div>
@@ -8776,7 +8786,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        {{BASICURL}}/district/65049b67a183563724d9c052
+                        localhost:5000/api/district/65049b67a183563724d9c052
                       </h4>
                     </a></div>
                   <div id=collapse-District-DeleteDistrict_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8818,7 +8828,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/vote
+                        localhost:5000/api/vote
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-GetAllVotes_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8847,7 +8857,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        {{BASICURL}}/vote
+                        localhost:5000/api/vote
                       </h4>
                     </a>
                   </div>
@@ -8885,7 +8895,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        {{BASICURL}}/vote/6504b681e291b74698149aa3
+                        localhost:5000/api/vote/6504b681e291b74698149aa3
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-GetSingleVote_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8913,7 +8923,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        {{BASICURL}}/vote/1ui2g3i12g3u12
+                        localhost:5000/api/vote/1ui2g3i12g3u12
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-DeleteVote_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8938,16 +8948,87 @@
             </div>
           </div>
         </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
+            <h3 class=panel-title id=News>News
+              <span class=badge>1</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-News>
+                <div class="panel panel-info" id=jump-News-GetNews>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-News href=#collapse-News-GetNews>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get News</strong>
+                        &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        localhost:5000/api/news
+                      </h4>
+                    </a></div>
+                  <div id=collapse-News-GetNews class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
+            <h3 class=panel-title id=Currency>Currency
+              <span class=badge>2</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-Currency>
+                <div class="panel panel-info" id=jump-Currency-GetCurrencyRates>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Currency href=#collapse-Currency-GetCurrencyRates>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Currency
+                          Rates</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        localhost:5000/api/currency/
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Currency-GetCurrencyRates class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Currency-GetSingleCurrencyRate>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Currency
+                      href=#collapse-Currency-GetSingleCurrencyRate>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single Currency
+                          Rate</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        localhost:5000/api/currency/hkd
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Currency-GetSingleCurrencyRate class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    <br><br>
-    <script src="./browser-app.js"></script>
+<br><br>
+<script src="./browser-app.js"></script>
   <footer class="navbar-default navbar-fixed-bottom">
     <div class=container-fluid>
       <div class="span12 text-center"><span data-toggle=tooltip
           title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Generated
-          at 2023-09-15 17:23:24 by <a href=https://github.com/thedevsaddam/docgen target=_blank
+          at 2023-10-06 15:47:53 by <a href=https://github.com/thedevsaddam/docgen target=_blank
             class=text-muted>docgen</a></span></div>
     </div>
   </footer>
