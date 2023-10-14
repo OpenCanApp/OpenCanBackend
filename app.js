@@ -22,12 +22,19 @@ const session = require("express-session");
 const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
+// Get News, Currency Rates Method
+const { getNews, getCurrencyRate } = require("./utils");
 // Router
 const {
   authRouter,
   userRouter,
   postRouter,
   districtRouter,
+  voteRouter,
+  newsRouter,
+  currencyRouter,
+  documentRouter,
+  locationRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -55,9 +62,19 @@ app.use(fileUpload({ useTempFiles: true }));
 app.use(express.static("./public"));
 
 // Routing
+app.get("/login-page", (req, res) => {
+  const publicPath = path.join(__dirname, "public");
+  res.sendFile(path.join(publicPath, "login-page.html"));
+});
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
 app.use("/api/post", postRouter);
+app.use("/api/district", districtRouter);
+app.use("/api/vote", voteRouter);
+app.use("/api/news", newsRouter);
+app.use("/api/currency", currencyRouter);
+app.use("/api/document", documentRouter);
+app.use("/api/location", locationRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
@@ -74,7 +91,19 @@ const start = async () => {
     app.listen(port, () => {
       console.log(`The server is running on port: ${port}`);
     });
-  } catch (err) {
+
+    await getNews();
+    await getCurrencyRate();
+
+    setInterval(async () => {
+      await getNews();
+    }, 30 * 60 * 1000); // 1 hour
+
+    setInterval(async() => {
+      await getCurrencyRate();
+    }, 2 * 60 * 60 * 1000); // 2 hours
+  } 
+  catch (err) {
     console.log(err);
   }
 };

@@ -27,6 +27,10 @@ const DistrictSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
+    numOfVote: {
+      type: Number,
+      default: 0,
+    }
   },
   {
     timestamps: true,

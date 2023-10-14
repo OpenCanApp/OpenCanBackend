@@ -7,9 +7,13 @@ const createPost = async (req, res) => {
   req.body.user = userId;
   const { category, content } = req.body;
 
-  // Check is it telegram link
-  if (category === "tg link" && !content.startsWith("https://t.me/")) {
+  // Check is it a link
+  if (category === "link" && !content.includes("https://")) {
     throw new CustomError.BadRequestError(`Please provide valid telegram link`);
+  }
+
+  if (req.body.tag) {
+    req.body.tag = req.body.tag.split(",").map((word) => word.trim());
   }
 
   const newPost = await Post.create(req.body);
@@ -65,7 +69,6 @@ const getAllPosts = async (req, res) => {
 
 const updatePost = async (req, res) => {
   const { id: postId } = req.params;
-  console.log(postId);
   const post = await Post.findOne({ _id: postId });
 
   if (!post) {
