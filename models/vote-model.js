@@ -65,11 +65,12 @@ VoteSchema.statics.calculateAverageRating = async function (districtId) {
     await this.model("District").findOneAndUpdate(
       { _id: districtId },
       {
-        safety: Math.ceil(result[0]?.safetyAverage || 0).toFixed(1),
-        transport: Math.ceil(result[0]?.transportAverage || 0).toFixed(1),
-        shopping: Math.ceil(result[0]?.shoppingAverage || 0).toFixed(1),
-        foods: Math.ceil(result[0]?.foodsAverage || 0).toFixed(1),
-        rent: Math.ceil(result[0]?.rentAverage || 0).toFixed(1),
+        safety: (result[0]?.safetyAverage || 0).toFixed(1),
+        safety: (result[0]?.safetyAverage || 0).toFixed(1),
+        transport: (result[0]?.transportAverage || 0).toFixed(1),
+        shopping: (result[0]?.shoppingAverage || 0).toFixed(1),
+        foods: (result[0]?.foodsAverage || 0).toFixed(1),
+        rent: (result[0]?.rentAverage || 0).toFixed(1),
         numOfVote: result[0]?.numOfVote || 0,
       }
     );
