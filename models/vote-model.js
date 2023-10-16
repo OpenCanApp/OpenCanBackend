@@ -37,10 +37,10 @@ const VoteSchema = new mongoose.Schema(
       min: 0,
       max: 5,
     },
+    comment: {
+      type: String
+    }
   },
-  {
-    timestamps: true,
-  }
 );
 
 // Only can vote one time

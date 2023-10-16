@@ -2,10 +2,18 @@ const mongoose = require("mongoose");
 
 const DistrictSchema = new mongoose.Schema(
   {
-    name: {
+    district: {
       type: String,
       required: [true, "Please provide district name"],
       unique: true,
+    },
+    city : {
+      type: String,
+      required: [true, "Please provide the city"]
+    },
+    province: {
+      type: String,
+      required: [true, "Please provide the province"]
     },
     safety: {
       type: Number,
