@@ -31,13 +31,13 @@ const createVote = async (req, res) => {
 };
 
 const getAllVotes = async (req, res) => {
-  const { district } = req.body;
+  const { district } = req.query;
   let queryObject = {};
   if (district) queryObject.district = district;
 
   const votes = await Vote.find(queryObject)
     .populate("user", ["name"])
-    .populate("district", ["name"]);
+    .populate("district", ["district"]);
 
   return res.status(StatusCodes.OK).json({ votes, count: votes.length });
 };
@@ -47,7 +47,7 @@ const getSingleVote = async (req, res) => {
 
   const vote = await Vote.findOne({ _id: voteId })
     .populate("user", ["name"])
-    .populate("district", ["name"]);
+    .populate("district", ["district"]);
 
   if (!vote) {
     throw new CustomError.NotFoundError(`There is no vote with id (${postId})`);
@@ -56,10 +56,33 @@ const getSingleVote = async (req, res) => {
   return res.status(StatusCodes.OK).json({ vote });
 };
 
+const updateVote = async (req, res) => {
+  const { id: voteId } = req.params;
+  const userId = req.user.userId;
+
+  const foundVote = await Vote.findOne({ _id: voteId });
+
+  if (!foundVote) {
+    throw new CustomError.NotFoundError(`There is no vote with id (${voteId})`);
+  }
+
+  if (foundVote.user.toString() !== userId) {
+    throw new CustomError.UnauthenticatedError(
+      "Unauthenticated to edit the vote"
+    );
+  }
+
+  const updatedVote = await foundVote.updateOne(req.body, {
+    runValidators: true,
+  });
+
+  return res.status(StatusCodes.OK).json({ vote: updatedVote });
+};
+
 const deleteVote = async (req, res) => {
   const { id: voteId } = req.params;
 
-  const deletedVote = await Vote.findOne({ _id: voteId })
+  const deletedVote = await Vote.findOne({ _id: voteId });
   await deletedVote.deleteOne();
 
   return res.status(StatusCodes.OK).json({

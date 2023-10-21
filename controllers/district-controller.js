@@ -3,7 +3,9 @@ const { StatusCodes } = require("http-status-codes");
 const CustomError = require("../errors");
 
 const createDistrict = async (req, res) => {
+  console.log(req.body);
   const newDistrict = await District.create(req.body);
+  console.log(newDistrict);
   return res.status(StatusCodes.CREATED).json({ district: newDistrict });
 };
 

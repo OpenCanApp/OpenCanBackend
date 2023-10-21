@@ -8,4 +8,5 @@ module.exports = {
   currencyController: require("./currency-controller"),
   documentController: require("./document-controller"),
   locationController: require("./location-controller"),
+  commentController: require("./comment-controller"),
 };

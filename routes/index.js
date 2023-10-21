@@ -7,5 +7,6 @@ module.exports = {
   newsRouter: require("./news-route"),
   currencyRouter: require("./currency-route"),
   documentRouter: require("./document-route"),
-  locationRouter: require("./location-route")
+  locationRouter: require("./location-route"),
+  commentRouter: require("./comment-route")
 };
