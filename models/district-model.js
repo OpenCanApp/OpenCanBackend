@@ -4,16 +4,12 @@ const DistrictSchema = new mongoose.Schema(
   {
     district: {
       type: String,
-      required: [true, "Please provide district name"],
-      unique: true,
     },
     city : {
       type: String,
-      required: [true, "Please provide the city"]
     },
     province: {
       type: String,
-      required: [true, "Please provide the province"]
     },
     safety: {
       type: Number,

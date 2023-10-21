@@ -7,4 +7,5 @@ module.exports = {
   Currency: require("./currency-model"),
   Document: require("./document-model"),
   Location: require("./location-model"),
+  Comment: require("./comment-model")
 };

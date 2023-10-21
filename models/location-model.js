@@ -25,6 +25,12 @@ const LocationSchema = new mongoose.Schema({
       type: Number,
     },
   },
+  url: {
+    type: String,
+  },
+  phone: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Location", LocationSchema);
