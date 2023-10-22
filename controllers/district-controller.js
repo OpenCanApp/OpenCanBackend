@@ -77,7 +77,7 @@ const deleteDistrict = async (req, res) => {
 
   return res
     .status(StatusCodes.OK)
-    .json({ message: `${deletedDistrict.name} is removed` });
+    .json({ message: `${deletedDistrict.district} is removed` });
 };
 
 module.exports = {

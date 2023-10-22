@@ -94,5 +94,6 @@ module.exports = {
   createVote,
   getAllVotes,
   getSingleVote,
+  updateVote,
   deleteVote,
 };
