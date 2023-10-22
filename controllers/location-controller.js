@@ -54,11 +54,16 @@ const updateLocation = async (req, res) => {
     { new: true, runValidators: true }
   );
 
-  return res.status(StatusCodes.OK).json({location: updatedLocation})
+  return res.status(StatusCodes.OK).json({ location: updatedLocation });
 };
 
 const deleteLocation = async (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: "deleteLocation" });
+  const { id: locationId } = req.params;
+
+  const deletedLocation = await Location.findOneAndDelete({ _id: locationId });
+  res
+    .status(StatusCodes.OK)
+    .json({ message: `${deletedLocation.topic} is removed` });
 };
 
 module.exports = {
