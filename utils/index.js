@@ -6,5 +6,6 @@ module.exports = {
   checkPermission: require("./auth-utils/checkPermission"),
   createTokenUser: require("./auth-utils/createTokenUser"),
   getNews: require("./news-utils"),
-  getCurrencyRate: require("./currency-rate-utils")
+  getCurrencyRate: require("./currency-rate-utils"),
+  getTweet: require("./tweet-utils")
 };

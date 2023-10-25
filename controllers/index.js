@@ -9,4 +9,5 @@ module.exports = {
   documentController: require("./document-controller"),
   locationController: require("./location-controller"),
   commentController: require("./comment-controller"),
+  tweetController: require("./tweet-controller"),
 };

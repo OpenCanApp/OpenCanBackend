@@ -8,5 +8,5 @@ module.exports = {
   currencyRouter: require("./currency-route"),
   documentRouter: require("./document-route"),
   locationRouter: require("./location-route"),
-  commentRouter: require("./comment-route")
+  commentRouter: require("./comment-route"),
 };

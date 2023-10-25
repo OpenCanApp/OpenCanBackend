@@ -23,7 +23,7 @@ const cors = require("cors");
 // MongoDB
 const connectDB = require("./db/connect");
 // Get News, Currency Rates Method
-const { getNews, getCurrencyRate } = require("./utils");
+const { getNews, getCurrencyRate, getTweet } = require("./utils");
 // Router
 const {
   authRouter,
@@ -35,7 +35,8 @@ const {
   currencyRouter,
   documentRouter,
   locationRouter,
-  commentRouter
+  commentRouter,
+  tweetRouter
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -96,22 +97,22 @@ const start = async () => {
 
     await getNews();
     await getCurrencyRate();
+    await getTweet();
 
     setInterval(async () => {
       await getNews();
+      await getTweet();
     }, 30 * 60 * 1000); // 1 hour
 
-    setInterval(async() => {
+    setInterval(async () => {
       await getCurrencyRate();
     }, 2 * 60 * 60 * 1000); // 2 hours
-  } 
-  catch (err) {
+  } catch (err) {
     console.log(err);
   }
 };
 
 start();
-
 
 // Export the Express API
 module.exports = app;
