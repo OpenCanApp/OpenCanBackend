@@ -13,7 +13,7 @@ const { createTokenUser, createJWT } = require("../utils");
 const googleLogin = async (req, res) => {
   const tokenUser = createTokenUser(req.user);
   const token = createJWT(tokenUser);
-  res.redirect(`myapp://callback?token=${token}`);
+  res.redirect(`opencanapp://callback?token=${token}`);
 };
 
 const facebookLogin = async (req, res) => {
