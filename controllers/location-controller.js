@@ -8,7 +8,7 @@ const getAllLocations = async (req, res) => {
 
   if (keyword) {
     queryObject.$or = [
-      { topic: { $regex: keyword, $options: "i" } },
+      { title: { $regex: keyword, $options: "i" } },
       { description: { $regex: keyword, $options: "i" } },
     ];
   }
@@ -63,7 +63,7 @@ const deleteLocation = async (req, res) => {
   const deletedLocation = await Location.findOneAndDelete({ _id: locationId });
   res
     .status(StatusCodes.OK)
-    .json({ message: `${deletedLocation.topic} is removed` });
+    .json({ message: `${deletedLocation.title} is removed` });
 };
 
 module.exports = {
