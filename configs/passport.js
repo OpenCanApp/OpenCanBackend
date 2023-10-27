@@ -22,6 +22,7 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log(profile);
       let foundUser = await User.findOne({ googleId: profile.id });
 
       if (foundUser) {
@@ -49,6 +50,7 @@ passport.use(
       profileFields: ["photos", "displayName"],
     },
     async (accessToken, refreshToken, profile, done) => {
+      console.log(profile);
       const foundUser = await User.findOne({ facebookId: profile.id });
 
       if (foundUser) {
