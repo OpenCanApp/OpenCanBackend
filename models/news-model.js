@@ -21,7 +21,7 @@ const NewsSchema = new mongoose.Schema(
     },
     category: {
       type: String,
-    }
+    },
   },
   {
     timestamps: true,
@@ -30,7 +30,15 @@ const NewsSchema = new mongoose.Schema(
 
 NewsSchema.statics.removeAllNews = async function () {
   await this.deleteMany({});
-  console.log("Remote all the outdated news")
+  console.log("Remote all the outdated news");
 };
 
+NewsSchema.statics.removeNewsByCategory = async function (category) {
+  if (category) {
+    await this.deleteMany({ category });
+    console.log(`Remote all the outdated ${category} news`);
+  } else {
+    console.log(`remove method category: ${category}`);
+  }
+};
 module.exports = mongoose.model("News", NewsSchema);
