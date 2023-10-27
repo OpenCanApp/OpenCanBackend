@@ -5,12 +5,8 @@ const { Tweet } = require("../models");
 const getTweet = async () => {
   try {
     const response = await axios.get(
-      `https://api.apify.com/v2/datasets/5fCp6Vu5RYfsl4UW4/items?token=${process.env.APIFY_API_KEY}`
+      `https://api.apify.com/v2/actor-tasks/open_can~tweet-flash-task/run-sync-get-dataset-items?token=${process.env.APIFY_API_KEY}`
     );
-
-    if (!response.data) {
-      throw new CustomError.BadRequestError(`Cannot get the tweets`);
-    }
 
     await Tweet.removeAllTweets();
 
