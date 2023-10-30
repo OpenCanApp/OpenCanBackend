@@ -8407,22 +8407,28 @@
             <ul>
               <li><a class=endpoint_menu href=#jump-User-ShowCurrentUser>Show Current User</a>
             </ul>
+          <li><strong><a href=#Auth>Auth</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-Auth-GoogleLoginCallback>Google Login Callback</a>
+              <li><a class=endpoint_menu href=#jump-Auth-FacebookLoginCallback>Facebook Login Callback</a>
+            </ul>
           <li><strong><a href=#Post>Post</a></strong>
             <ul>
               <li><a class=endpoint_menu href=#jump-Post-GetAllPosts>Get All Posts</a>
-              <li><a class=endpoint_menu href=#jump-Post-GetAllPostsAsAdmin_28OnlyAdmin_29>Get All Posts As Admin (Only
-                  Admin)</a>
-              <li><a class=endpoint_menu href=#jump-Post-CreatePost>Create Post</a>
+              <li><a class=endpoint_menu href=#jump-Post-GetAllPostsWithQuery>Get All Posts With Query</a>
+              <li><a class=endpoint_menu href=#jump-Post-GetAllPostincludingnonverifiedpost_28AdminOnly_29>Get All Post
+                  including non-verified post(Admin Only)</a>
               <li><a class=endpoint_menu href=#jump-Post-GetSinglePost>Get Single Post</a>
+              <li><a class=endpoint_menu href=#jump-Post-CreatePost>Create Post</a>
               <li><a class=endpoint_menu href=#jump-Post-UpdatePost_28OnlyAdmin_29>Update Post (Only Admin)</a>
               <li><a class=endpoint_menu href=#jump-Post-DeletePost_28OnlyAdmin_29>Delete Post (Only Admin)</a>
             </ul>
           <li><strong><a href=#District>District</a></strong>
             <ul>
               <li><a class=endpoint_menu href=#jump-District-GetAllDistricts>Get All Districts</a>
+              <li><a class=endpoint_menu href=#jump-District-GetSingleDistrict>Get Single District</a>
               <li><a class=endpoint_menu href=#jump-District-CreateDistrict_28OnlyAdmin_29>Create District (Only
                   Admin)</a>
-              <li><a class=endpoint_menu href=#jump-District-GetSingleDistrict>Get Single District</a>
               <li><a class=endpoint_menu href=#jump-District-UpdateDistrict_28OnlyAdmin_29>Update District (Only
                   Admin)</a>
               <li><a class=endpoint_menu href=#jump-District-DeleteDistrict_28OnlyAdmin_29>Delete District (Only
@@ -8431,13 +8437,16 @@
           <li><strong><a href=#Vote>Vote</a></strong>
             <ul>
               <li><a class=endpoint_menu href=#jump-Vote-GetAllVotes_28OnlyAdmin_29>Get All Votes (Only Admin)</a>
-              <li><a class=endpoint_menu href=#jump-Vote-CreateVote>Create Vote</a>
               <li><a class=endpoint_menu href=#jump-Vote-GetSingleVote_28OnlyAdmin_29>Get Single Vote (Only Admin)</a>
+              <li><a class=endpoint_menu href=#jump-Vote-CreateVote>Create Vote</a>
+              <li><a class=endpoint_menu href=#jump-Vote-UpdateVote_28OnlyAdmin_29>Update Vote (Only Admin)</a>
               <li><a class=endpoint_menu href=#jump-Vote-DeleteVote_28OnlyAdmin_29>Delete Vote (Only Admin)</a>
             </ul>
           <li><strong><a href=#News>News</a></strong>
             <ul>
               <li><a class=endpoint_menu href=#jump-News-GetNews>Get News</a>
+              <li><a class=endpoint_menu href=#jump-News-GetTTC>Get TTC</a>
+              <li><a class=endpoint_menu href=#jump-News-GetNewswithQuery>Get News with Query</a>
             </ul>
           <li><strong><a href=#Currency>Currency</a></strong>
             <ul>
@@ -8458,13 +8467,23 @@
           <li><strong><a href=#Location>Location</a></strong>
             <ul>
               <li><a class=endpoint_menu href=#jump-Location-GetAllLocations>Get All Locations</a>
+              <li><a class=endpoint_menu href=#jump-Location-GetAllLocationswithQuery>Get All Locations with Query</a>
+              <li><a class=endpoint_menu href=#jump-Location-GetSingleLocation>Get Single Location</a>
               <li><a class=endpoint_menu href=#jump-Location-CreateLocation_28OnlyAdmin_29>Create Location (Only
                   Admin)</a>
-              <li><a class=endpoint_menu href=#jump-Location-GetSingleLocation>Get Single Location</a>
-              <li><a class=endpoint_menu href=#jump-Location-UpdateADocument_28OnlyAdmin_29>Update A Document (Only
+              <li><a class=endpoint_menu href=#jump-Location-UpdateALocation_28OnlyAdmin_29>Update A Location (Only
                   Admin)</a>
-              <li><a class=endpoint_menu href=#jump-Location-DeleteADocument_28OnlyAdmin_29>Delete A Document (Only
+              <li><a class=endpoint_menu href=#jump-Location-DeleteALocation_28OnlyAdmin_29>Delete A Location (Only
                   Admin)</a>
+            </ul>
+          <li><strong><a href=#Comment>Comment</a></strong>
+            <ul>
+              <li><a class=endpoint_menu href=#jump-Comment-GetAllComments>Get All Comments</a>
+              <li><a class=endpoint_menu href=#jump-Comment-GetAllCommentswithQuery>Get All Comments with Query</a>
+              <li><a class=endpoint_menu href=#jump-Comment-GetSingleComment>Get Single Comment</a>
+              <li><a class=endpoint_menu href=#jump-Comment-CreateComment>Create Comment</a>
+              <li><a class=endpoint_menu href=#jump-Comment-UpdateComment>Update Comment</a>
+              <li><a class=endpoint_menu href=#jump-Comment-DeleteComment>Delete Comment</a>
             </ul>
         </ul>
       </div>
@@ -8486,7 +8505,7 @@
                           User</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/user/show-me
+                        https://api.opencan.ca/api/user/show-me
                       </h4>
                     </a></div>
                   <div id=collapse-User-ShowCurrentUser class="panel-collapse collapse">
@@ -8513,8 +8532,128 @@
         </div>
         <div class="panel panel-default">
           <div class=panel-heading>
+            <h3 class=panel-title id=Auth>Auth
+              <span class=badge>2</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-Auth>
+                <div class="panel panel-success" id=jump-Auth-GoogleLoginCallback>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-success data-toggle=collapse data-parent=#accordion-Auth
+                      href=#collapse-Auth-GoogleLoginCallback>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Google Login
+                          Callback</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-success">POST</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/auth/google/callback
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Auth-GoogleLoginCallback class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;profile&#34;: {
+                        &#34;id&#34;: &#34;114260048343981069826&#34;,
+                        &#34;displayName&#34;: &#34;Testing Robot&#34;,
+                        &#34;name&#34;: {
+                        &#34;familyName&#34;: &#34;Robot&#34;,
+                        &#34;givenName&#34;: &#34;Testing&#34;
+                        },
+                        &#34;emails&#34;: [
+                        {
+                        &#34;value&#34;: &#34;testingrobot.coding@gmail.com&#34;,
+                        &#34;verified&#34;: true
+                        }
+                        ],
+                        &#34;photos&#34;: [
+                        {
+                        &#34;value&#34;:
+                        &#34;https://lh3.googleusercontent.com/a/ACg8ocJVXC-Rzqf94C0_dnT7V_VdcF73bSZXVNpodZtFxqJ5Pw=s96-c&#34;
+                        }
+                        ],
+                        &#34;provider&#34;: &#34;google&#34;
+                        }
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-success" id=jump-Auth-FacebookLoginCallback>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-success data-toggle=collapse data-parent=#accordion-Auth
+                      href=#collapse-Auth-FacebookLoginCallback>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Facebook Login
+                          Callback</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-success">POST</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/auth/facebook/callback
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Auth-FacebookLoginCallback class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;profile&#34;: {
+                        &#34;id&#34;: &#34;122111932502030323&#34;,
+                        &#34;username&#34;: &#34;undefined&#34;,
+                        &#34;displayName&#34;: &#34;Open Can&#34;,
+                        &#34;name&#34;: {
+                        &#34;familyName&#34;: &#34;undefined&#34;,
+                        &#34;givenName&#34;: &#34;undefined&#34;,
+                        &#34;middleName&#34;: &#34;undefined&#34;
+                        },
+                        &#34;gender&#34;: &#34;undefined&#34;,
+                        &#34;profileUrl&#34;: &#34;undefined&#34;,
+                        &#34;photos&#34;: [
+                        {
+                        &#34;value&#34;:
+                        &#34;https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=122111932502030323&amp;height=50&amp;width=50&amp;ext=1701014647&amp;hash=AeSOaZf2bVv6L8ujLxA&#34;
+                        }
+                        ],
+                        &#34;provider&#34;: &#34;facebook&#34;
+                        }
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
             <h3 class=panel-title id=Post>Post
-              <span class=badge>6</span>
+              <span class=badge>7</span>
             </h3>
           </div>
           <div class=panel-body>
@@ -8528,7 +8667,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/post
+                        https://api.opencan.ca/api/post
                       </h4>
                     </a></div>
                   <div id=collapse-Post-GetAllPosts class="panel-collapse collapse">
@@ -8549,18 +8688,104 @@
                     </div>
                   </div>
                 </div>
-                <div class="panel panel-info" id=jump-Post-GetAllPostsAsAdmin_28OnlyAdmin_29>
+                <div class="panel panel-info" id=jump-Post-GetAllPostsWithQuery>
                   <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
-                      data-toggle=collapse data-parent=#accordion-Post
-                      href=#collapse-Post-GetAllPostsAsAdmin_28OnlyAdmin_29>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All Posts As Admin
-                          (Only Admin)</strong> &nbsp;|&nbsp;
+                      data-toggle=collapse data-parent=#accordion-Post href=#collapse-Post-GetAllPostsWithQuery>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All Posts With
+                          Query</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/post/show-all
+                        https://api.opencan.ca/api/post
                       </h4>
                     </a></div>
-                  <div id=collapse-Post-GetAllPostsAsAdmin_28OnlyAdmin_29 class="panel-collapse collapse">
+                  <div id=collapse-Post-GetAllPostsWithQuery class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-info">Query</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>page
+                            <td>1
+                            <td>
+                          <tr>
+                            <td>limit
+                            <td>10
+                            <td>
+                          <tr>
+                            <td>category
+                            <td>link
+                            <td>
+                          <tr>
+                            <td>keyword
+                            <td>ball
+                            <td>
+                          <tr>
+                            <td>sort
+                            <td>old
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Post-GetAllPostincludingnonverifiedpost_28AdminOnly_29>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Post
+                      href=#collapse-Post-GetAllPostincludingnonverifiedpost_28AdminOnly_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All Post including
+                          non-verified post(Admin Only)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/post/show-all
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Post-GetAllPostincludingnonverifiedpost_28AdminOnly_29
+                    class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Post-GetSinglePost>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Post href=#collapse-Post-GetSinglePost>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          Post</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/post/653fdf2c5c88cfb3806f6404
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Post-GetSinglePost class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-warning">Headers</h5>
                       <table class="table table-hover">
@@ -8586,7 +8811,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/post/
+                        https://api.opencan.ca/api/post/
                       </h4>
                     </a>
                   </div>
@@ -8606,39 +8831,11 @@
                             <td>
                       </table>
                       <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                        &#34;title&#34;: &#34;Come and play&#34;,
+                        &#34;title&#34;: &#34;Football Club&#34;,
                         &#34;content&#34;: &#34;https://t.me/comeladiu&#34;,
-                        &#34;category&#34;: &#34;tg link&#34;
+                        &#34;category&#34;: &#34;link&#34;
                         }</span>
                       <div class=clearfix></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-info" id=jump-Post-GetSinglePost>
-                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
-                      data-toggle=collapse data-parent=#accordion-Post href=#collapse-Post-GetSinglePost>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
-                          Post</strong> &nbsp;|&nbsp;
-                        <strong class="request-method border-info">GET</strong>
-                        &nbsp;
-                        https://opencan-backend.onrender.com/api/post/65037c99676a4cda21fea62f
-                      </h4>
-                    </a></div>
-                  <div id=collapse-Post-GetSinglePost class="panel-collapse collapse">
-                    <div class=panel-body>
-                      <h5 class="label label-warning">Headers</h5>
-                      <table class="table table-hover">
-                        <thead>
-                          <tr>
-                            <th>Key
-                            <th>Value
-                            <th>Description
-                        <tbody>
-                          <tr>
-                            <td>Authorization
-                            <td>Bearer {{Auth}}
-                            <td>
-                      </table>
                     </div>
                   </div>
                 </div>
@@ -8650,7 +8847,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/post/6503859fa22714048e07d4a3
+                        https://api.opencan.ca/api/post/653fdf2c5c88cfb3806f6404
                       </h4>
                     </a>
                   </div>
@@ -8683,7 +8880,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/post/65037c99676a4cda21fea62f
+                        https://api.opencan.ca/api/post/653fdf2c5c88cfb3806f6404
                       </h4>
                     </a></div>
                   <div id=collapse-Post-DeletePost_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8725,10 +8922,24 @@
                           Districts</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/district
+                        https://api.opencan.ca/api/district
                       </h4>
                     </a></div>
                   <div id=collapse-District-GetAllDistricts class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-District-GetSingleDistrict>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-District href=#collapse-District-GetSingleDistrict>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          District</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/district/6504a369da535ddae4e791ca
+                      </h4>
+                    </a></div>
+                  <div id=collapse-District-GetSingleDistrict class="panel-collapse collapse">
                     <div class=panel-body></div>
                   </div>
                 </div>
@@ -8740,7 +8951,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/district
+                        https://api.opencan.ca/api/district
                       </h4>
                     </a>
                   </div>
@@ -8760,24 +8971,12 @@
                             <td>
                       </table>
                       <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                        &#34;name&#34;: &#34;North York&#34;
+                        &#34;district&#34;: &#34;Surrey&#34;,
+                        &#34;city&#34;: &#34;Vancouver&#34;,
+                        &#34;province&#34; : &#34;British Columbia&#34;
                         }</span>
                       <div class=clearfix></div>
                     </div>
-                  </div>
-                </div>
-                <div class="panel panel-info" id=jump-District-GetSingleDistrict>
-                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
-                      data-toggle=collapse data-parent=#accordion-District href=#collapse-District-GetSingleDistrict>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
-                          District</strong> &nbsp;|&nbsp;
-                        <strong class="request-method border-info">GET</strong>
-                        &nbsp;
-                        https://opencan-backend.onrender.com/api/district/6504a369da535ddae4e791ca
-                      </h4>
-                    </a></div>
-                  <div id=collapse-District-GetSingleDistrict class="panel-collapse collapse">
-                    <div class=panel-body></div>
                   </div>
                 </div>
                 <div class="panel panel-warning" id=jump-District-UpdateDistrict_28OnlyAdmin_29>
@@ -8788,7 +8987,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/district/65049b67a183563724d9c052
+                        https://api.opencan.ca/api/district/6534b8e2c4331fff2a81b31e
                       </h4>
                     </a>
                   </div>
@@ -8808,7 +9007,9 @@
                             <td>
                       </table>
                       <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                        &#34;name&#34;: &#34;North York&#34;
+                        &#34;district&#34;: &#34;Testing District 3&#34;,
+                        &#34;city&#34;: &#34;Testing City 3&#34;,
+                        &#34;province&#34; : &#34;Testing Province 3&#34;
                         }</span>
                       <div class=clearfix></div>
                     </div>
@@ -8822,7 +9023,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/district/65049b67a183563724d9c052
+                        https://api.opencan.ca/api/district/653415c2eb8e2f48553b941e
                       </h4>
                     </a></div>
                   <div id=collapse-District-DeleteDistrict_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8850,7 +9051,7 @@
         <div class="panel panel-default">
           <div class=panel-heading>
             <h3 class=panel-title id=Vote>Vote
-              <span class=badge>4</span>
+              <span class=badge>5</span>
             </h3>
           </div>
           <div class=panel-body>
@@ -8864,10 +9065,38 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/vote
+                        https://api.opencan.ca/api/vote
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-GetAllVotes_28OnlyAdmin_29 class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Vote-GetSingleVote_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Vote href=#collapse-Vote-GetSingleVote_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single Vote (Only
+                          Admin)</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/vote/6504b681e291b74698149aa3
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Vote-GetSingleVote_28OnlyAdmin_29 class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-warning">Headers</h5>
                       <table class="table table-hover">
@@ -8893,7 +9122,7 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/vote
+                        https://api.opencan.ca/api/vote
                       </h4>
                     </a>
                   </div>
@@ -8913,7 +9142,7 @@
                             <td>
                       </table>
                       <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
-                        &#34;district&#34;: &#34;6504a369da535ddae4e791ca&#34;,
+                        &#34;district&#34;: &#34;653415b9eb8e2f48553b941c&#34;,
                         &#34;safety&#34;: 1,
                         &#34;transport&#34;: 1,
                         &#34;shopping&#34;: 1,
@@ -8924,17 +9153,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="panel panel-info" id=jump-Vote-GetSingleVote_28OnlyAdmin_29>
-                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
-                      data-toggle=collapse data-parent=#accordion-Vote href=#collapse-Vote-GetSingleVote_28OnlyAdmin_29>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single Vote (Only
+                <div class="panel panel-warning" id=jump-Vote-UpdateVote_28OnlyAdmin_29>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-warning data-toggle=collapse data-parent=#accordion-Vote
+                      href=#collapse-Vote-UpdateVote_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update Vote (Only
                           Admin)</strong> &nbsp;|&nbsp;
-                        <strong class="request-method border-info">GET</strong>
+                        <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/vote/6504b681e291b74698149aa3
+                        https://api.opencan.ca/api/vote/6534ba928f4a64831f463b89
                       </h4>
-                    </a></div>
-                  <div id=collapse-Vote-GetSingleVote_28OnlyAdmin_29 class="panel-collapse collapse">
+                    </a>
+                  </div>
+                  <div id=collapse-Vote-UpdateVote_28OnlyAdmin_29 class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-warning">Headers</h5>
                       <table class="table table-hover">
@@ -8949,6 +9180,14 @@
                             <td>Bearer {{Auth}}
                             <td>
                       </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;safety&#34;: 3,
+                        &#34;transport&#34;: 3,
+                        &#34;shopping&#34;: 3,
+                        &#34;foods&#34;: 3,
+                        &#34;rent&#34;: 3
+                        }</span>
+                      <div class=clearfix></div>
                     </div>
                   </div>
                 </div>
@@ -8959,7 +9198,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/vote/1ui2g3i12g3u12
+                        https://api.opencan.ca/api/vote/1ui2g3i12g3u12
                       </h4>
                     </a></div>
                   <div id=collapse-Vote-DeleteVote_28OnlyAdmin_29 class="panel-collapse collapse">
@@ -8987,7 +9226,7 @@
         <div class="panel panel-default">
           <div class=panel-heading>
             <h3 class=panel-title id=News>News
-              <span class=badge>1</span>
+              <span class=badge>3</span>
             </h3>
           </div>
           <div class=panel-body>
@@ -9001,10 +9240,38 @@
                         &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/news
+                        https://api.opencan.ca/api/news
                       </h4>
                     </a></div>
                   <div id=collapse-News-GetNews class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-News-GetTTC>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-News href=#collapse-News-GetTTC>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get TTC</strong>
+                        &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/news/ttc
+                      </h4>
+                    </a></div>
+                  <div id=collapse-News-GetTTC class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-News-GetNewswithQuery>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-News href=#collapse-News-GetNewswithQuery>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get News with
+                          Query</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api//news
+                      </h4>
+                    </a></div>
+                  <div id=collapse-News-GetNewswithQuery class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-info">Query</h5>
                       <table class="table table-hover">
@@ -9043,7 +9310,7 @@
                           Rates</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/currency/
+                        https://api.opencan.ca/api/currency/
                       </h4>
                     </a></div>
                   <div id=collapse-Currency-GetCurrencyRates class="panel-collapse collapse">
@@ -9058,7 +9325,7 @@
                           Rate</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/currency/hkd
+                        https://api.opencan.ca/api/currency/hkd
                       </h4>
                     </a></div>
                   <div id=collapse-Currency-GetSingleCurrencyRate class="panel-collapse collapse">
@@ -9086,7 +9353,7 @@
                           Documents</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document
+                        https://api.opencan.ca/api/document
                       </h4>
                     </a></div>
                   <div id=collapse-Doucment-GetAllDocuments class="panel-collapse collapse">
@@ -9115,7 +9382,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document/
+                        https://api.opencan.ca/api/document/
                       </h4>
                     </a>
                   </div>
@@ -9151,7 +9418,7 @@
                           Documents</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document/6528b96c4375df0a81c36c35
+                        https://api.opencan.ca/api/document/6528b96c4375df0a81c36c35
                       </h4>
                     </a>
                   </div>
@@ -9167,7 +9434,7 @@
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document/6528bbf8ed6eacad18e1c3dc
+                        https://api.opencan.ca/api/document/6528bbf8ed6eacad18e1c3dc
                       </h4>
                     </a>
                   </div>
@@ -9203,7 +9470,7 @@
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document/6528b7ff4375df0a81c36c2d
+                        https://api.opencan.ca/api/document/6528b7ff4375df0a81c36c2d
                       </h4>
                     </a>
                   </div>
@@ -9241,7 +9508,7 @@
         <div class="panel panel-default">
           <div class=panel-heading>
             <h3 class=panel-title id=Location>Location
-              <span class=badge>5</span>
+              <span class=badge>6</span>
             </h3>
           </div>
           <div class=panel-body>
@@ -9255,10 +9522,63 @@
                           Locations</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-info">GET</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/location
+                        https://api.opencan.ca/api/location
                       </h4>
                     </a></div>
                   <div id=collapse-Location-GetAllLocations class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Location-GetAllLocationswithQuery>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-GetAllLocationswithQuery>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All Locations with
+                          Query</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/location
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Location-GetAllLocationswithQuery class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-info">Query</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>category
+                            <td>attractions
+                            <td>
+                          <tr>
+                            <td>keyword
+                            <td>tower
+                            <td>
+                          <tr>
+                            <td>city
+                            <td>ToRonTO
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Location-GetSingleLocation>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-info data-toggle=collapse data-parent=#accordion-Location
+                      href=#collapse-Location-GetSingleLocation>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          Location</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/location/6528dd77e1f3565899f3e977
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Location-GetSingleLocation class="panel-collapse collapse">
                     <div class=panel-body></div>
                   </div>
                 </div>
@@ -9270,7 +9590,7 @@
                           Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-success">POST</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/location/
+                        https://api.opencan.ca/api/location/
                       </h4>
                     </a>
                   </div>
@@ -9298,41 +9618,27 @@
                         &#34;coordinate&#34;: {
                         &#34;lat&#34;: 43.642566,
                         &#34;long&#34;: -79.387057
-                        }
+                        },
+                        &#34;url&#34;: &#34;https://www.cntower.ca/&#34;,
+                        &#34;phone&#34;: &#34;(416) 868-6937&#34;
                         }</span>
                       <div class=clearfix></div>
                     </div>
                   </div>
                 </div>
-                <div class="panel panel-info" id=jump-Location-GetSingleLocation>
-                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
-                    <a class=text-info data-toggle=collapse data-parent=#accordion-Location
-                      href=#collapse-Location-GetSingleLocation>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
-                          Location</strong> &nbsp;|&nbsp;
-                        <strong class="request-method border-info">GET</strong>
-                        &nbsp;
-                        https://opencan-backend.onrender.com/api/location/6528d82799b76ce1c5d3a363
-                      </h4>
-                    </a>
-                  </div>
-                  <div id=collapse-Location-GetSingleLocation class="panel-collapse collapse">
-                    <div class=panel-body></div>
-                  </div>
-                </div>
-                <div class="panel panel-warning" id=jump-Location-UpdateADocument_28OnlyAdmin_29>
+                <div class="panel panel-warning" id=jump-Location-UpdateALocation_28OnlyAdmin_29>
                   <div class=panel-heading><small class="pull-right text-muted">raw</small>
                     <a class=text-warning data-toggle=collapse data-parent=#accordion-Location
-                      href=#collapse-Location-UpdateADocument_28OnlyAdmin_29>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update A Document
+                      href=#collapse-Location-UpdateALocation_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update A Location
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-warning">PATCH</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/location/6528dd77e1f3565899f3e977
+                        https://api.opencan.ca/api/location/6528deb88ff382ae85484cd9
                       </h4>
                     </a>
                   </div>
-                  <div id=collapse-Location-UpdateADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                  <div id=collapse-Location-UpdateALocation_28OnlyAdmin_29 class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-warning">Headers</h5>
                       <table class="table table-hover">
@@ -9354,19 +9660,19 @@
                     </div>
                   </div>
                 </div>
-                <div class="panel panel-danger" id=jump-Location-DeleteADocument_28OnlyAdmin_29>
+                <div class="panel panel-danger" id=jump-Location-DeleteALocation_28OnlyAdmin_29>
                   <div class=panel-heading><small class="pull-right text-muted">raw</small>
                     <a class=text-danger data-toggle=collapse data-parent=#accordion-Location
-                      href=#collapse-Location-DeleteADocument_28OnlyAdmin_29>
-                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Delete A Document
+                      href=#collapse-Location-DeleteALocation_28OnlyAdmin_29>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Delete A Location
                           (Only Admin)</strong> &nbsp;|&nbsp;
                         <strong class="request-method border-danger">DELETE</strong>
                         &nbsp;
-                        https://opencan-backend.onrender.com/api/document/6528dd77e1f3565899f3e977
+                        https://api.opencan.ca/api/location/6528deb88ff382ae85484cd9
                       </h4>
                     </a>
                   </div>
-                  <div id=collapse-Location-DeleteADocument_28OnlyAdmin_29 class="panel-collapse collapse">
+                  <div id=collapse-Location-DeleteALocation_28OnlyAdmin_29 class="panel-collapse collapse">
                     <div class=panel-body>
                       <h5 class="label label-warning">Headers</h5>
                       <table class="table table-hover">
@@ -9397,6 +9703,188 @@
             </div>
           </div>
         </div>
+        <div class="panel panel-default">
+          <div class=panel-heading>
+            <h3 class=panel-title id=Comment>Comment
+              <span class=badge>6</span>
+            </h3>
+          </div>
+          <div class=panel-body>
+            <p>
+            <div class=request-item>
+              <div class=panel-group id=accordion-Comment>
+                <div class="panel panel-info" id=jump-Comment-GetAllComments>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Comment href=#collapse-Comment-GetAllComments>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All
+                          Comments</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Comment-GetAllComments class="panel-collapse collapse">
+                    <div class=panel-body></div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Comment-GetAllCommentswithQuery>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Comment
+                      href=#collapse-Comment-GetAllCommentswithQuery>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get All Comments with
+                          Query</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Comment-GetAllCommentswithQuery class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-info">Query</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>district
+                            <td>653415b9eb8e2f48553b941c
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-info" id=jump-Comment-GetSingleComment>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-info
+                      data-toggle=collapse data-parent=#accordion-Comment href=#collapse-Comment-GetSingleComment>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Get Single
+                          Comment</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-info">GET</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment/6534c2f22afce7cfad2aaa70
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Comment-GetSingleComment class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-success" id=jump-Comment-CreateComment>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-success data-toggle=collapse data-parent=#accordion-Comment
+                      href=#collapse-Comment-CreateComment>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Create
+                          Comment</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-success">POST</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Comment-CreateComment class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;district&#34;: &#34;653415b9eb8e2f48553b941c&#34;,
+                        &#34;comment&#34;: &#34;This is a good area&#34;
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-warning" id=jump-Comment-UpdateComment>
+                  <div class=panel-heading><small class="pull-right text-muted">raw</small>
+                    <a class=text-warning data-toggle=collapse data-parent=#accordion-Comment
+                      href=#collapse-Comment-UpdateComment>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Update
+                          Comment</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-warning">PATCH</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment/6534c2f22afce7cfad2aaa70
+                      </h4>
+                    </a>
+                  </div>
+                  <div id=collapse-Comment-UpdateComment class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                      <h5 class="label label-primary">Body</h5><span class=resp-prettyprint>{
+                        &#34;comment&#34;: &#34;This is so boring&#34;
+                        }</span>
+                      <div class=clearfix></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-danger" id=jump-Comment-DeleteComment>
+                  <div class=panel-heading><small class="pull-right text-muted"></small><a class=text-danger
+                      data-toggle=collapse data-parent=#accordion-Comment href=#collapse-Comment-DeleteComment>
+                      <h4 class=panel-title><span class="glyphicon glyphicon-plus"></span><strong>Delete
+                          Comment</strong> &nbsp;|&nbsp;
+                        <strong class="request-method border-danger">DELETE</strong>
+                        &nbsp;
+                        https://api.opencan.ca/api/comment/6534c2f22afce7cfad2aaa70
+                      </h4>
+                    </a></div>
+                  <div id=collapse-Comment-DeleteComment class="panel-collapse collapse">
+                    <div class=panel-body>
+                      <h5 class="label label-warning">Headers</h5>
+                      <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>Key
+                            <th>Value
+                            <th>Description
+                        <tbody>
+                          <tr>
+                            <td>Authorization
+                            <td>Bearer {{Auth}}
+                            <td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -9406,7 +9894,7 @@
     <div class=container-fluid>
       <div class="span12 text-center"><span data-toggle=tooltip
           title="If the application help you, please feel free to give a star to the project in github. Your star inspire me to work more on open-source projects like this!">Generated
-          at 2023-10-13 16:08:35 by <a href=https://github.com/thedevsaddam/docgen target=_blank
+          at 2023-10-30 13:00:27 by <a href=https://github.com/thedevsaddam/docgen target=_blank
             class=text-muted>docgen</a></span></div>
     </div>
   </footer>
