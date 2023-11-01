@@ -11,18 +11,28 @@ const getCurrencyRate = async () => {
     throw new CustomError.BadRequestError(`Cannot get the currency rates`);
   }
 
-  // await Currency.removeAllCurrency();
-
-  let base = response.data.base;
+  let cadRate = response.data.rates["CAD"];
+  let base = "CAD";
   let rates = response.data.rates;
 
+  // CAD to USA
+  await Currency.removeACurrency("USD");
+  const cadToUsd = await Currency.create({
+    currency: "USD",
+    base: "CAD",
+    rate: 1/ cadRate
+  });
+  
+  // CAD to other
   for (const key in rates) {
     await Currency.removeACurrency(key);
+    if (key === "CAD") continue;
     const currency = await Currency.create({
       currency: key,
       base,
-      rate: rates[key],
+      rate: rates[key] / cadRate,
     });
+    
   }
   console.log("Updated Currency Rates");
 };

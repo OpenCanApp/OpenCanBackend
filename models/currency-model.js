@@ -23,7 +23,7 @@ CurrencySchema.statics.removeAllCurrency = async function () {
 };
 
 CurrencySchema.statics.removeACurrency = async function(currency) {
-  await this.deleteOne({currency});
+  await this.deleteMany({currency});
 }
 
 module.exports = mongoose.model("Currency", CurrencySchema);
