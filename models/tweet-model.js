@@ -17,6 +17,8 @@ const TweetSchema = new mongoose.Schema(
     date: {
       type: Date
     }
+  }, {
+    timestamps: true
   }
 )
 
