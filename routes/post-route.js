@@ -17,7 +17,7 @@ const {
 
 router
   .route("/")
-  .get(authenticationMiddleware, getAllPosts)
+  .get(getAllPosts)
   .post(authenticationMiddleware, createPost);
 
 router
