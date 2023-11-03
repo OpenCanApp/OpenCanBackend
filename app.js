@@ -100,10 +100,10 @@ const start = async () => {
     await getTweet();
 
     setInterval(async () => {
-      console.log("15 mins Interval");
+      console.log("20 minutes Interval");
       await getTweet();
-    }, 15 * 60 * 1000);
-    
+    }, 20 * 60 * 1000); // 20 minutes
+
     setInterval(async () => {
       console.log("1 Hour Interval");
       await getNews();
