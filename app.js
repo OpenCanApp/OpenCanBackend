@@ -36,7 +36,7 @@ const {
   documentRouter,
   locationRouter,
   commentRouter,
-  tweetRouter
+  tweetRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -100,13 +100,17 @@ const start = async () => {
     await getTweet();
 
     setInterval(async () => {
-      console.log("1 Hour Interval")
-      await getNews();
+      console.log("15 mins Interval");
       await getTweet();
-    }, 30 * 60 * 1000); // 1 hour
+    }, 15 * 60 * 1000);
+    
+    setInterval(async () => {
+      console.log("1 Hour Interval");
+      await getNews();
+    }, 60 * 60 * 1000); // 1 hour
 
     setInterval(async () => {
-      console.log("2 Hours Interval")
+      console.log("2 Hours Interval");
       await getCurrencyRate();
     }, 2 * 60 * 60 * 1000); // 2 hours
   } catch (err) {
@@ -118,5 +122,3 @@ start();
 
 // Export the Express API for Vercel
 module.exports = app;
-
-
