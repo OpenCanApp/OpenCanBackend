@@ -100,11 +100,13 @@ const start = async () => {
     await getTweet();
 
     setInterval(async () => {
+      console.log("1 Hour Interval")
       await getNews();
       await getTweet();
     }, 30 * 60 * 1000); // 1 hour
 
     setInterval(async () => {
+      console.log("2 Hours Interval")
       await getCurrencyRate();
     }, 2 * 60 * 60 * 1000); // 2 hours
   } catch (err) {

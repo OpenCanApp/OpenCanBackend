@@ -18,8 +18,9 @@ const getTweet = async () => {
         username,
         timestamp,
       } = tweet;
+      
       const date = new Date(timestamp);
-
+      
       await Tweet.create({
         tweetAvatar,
         url,
