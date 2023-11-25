@@ -13,7 +13,8 @@ const googleLogin = async (req, res) => {
     token,
   };
   const userData = JSON.stringify(userDataObject);
-  const deepLinkUrl = `opencan://home?data=${encodeURIComponent(userData)}`;
+  const linkingUri = req.query.state; 
+  const deepLinkUrl = `${linkingUri}://home?data=${encodeURIComponent(userData)}`;
   res.redirect(deepLinkUrl);
 
   // res.status(StatusCodes.OK).json({ user: tokenUser, token, userData });
