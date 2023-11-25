@@ -7,7 +7,16 @@ const googleLogin = async (req, res) => {
   const tokenUser = createTokenUser(req.user);
   const token = createJWT(tokenUser);
 
-  res.status(StatusCodes.OK).json({ user: tokenUser, token });
+  // Json -> String
+  const userDataObject = {
+    tokenUser,
+    token,
+  };
+  const userData = JSON.stringify(userDataObject);
+  const deepLinkUrl = `opencan://home?data=${encodeURIComponent(userData)}`;
+  res.redirect(deepLinkUrl);
+
+  // res.status(StatusCodes.OK).json({ user: tokenUser, token, userData });
 };
 
 // const googleLogin = async (req, res) => {
@@ -24,7 +33,7 @@ const facebookLogin = async (req, res) => {
 };
 
 const receiveUserProfile = async (req, res) => {
-  console.log("receiveUserProfile")
+  console.log("receiveUserProfile");
   const { profile } = req.body;
   if (profile.provider === "google") {
     let foundUser = await User.findOne({ googleId: profile.id });
@@ -47,9 +56,8 @@ const receiveUserProfile = async (req, res) => {
 
       return res.status(StatusCodes.OK).json({ user: tokenUser, token });
     }
-  } 
-  else if (profile.provider === "facebook") {
-    console.log("facebook")
+  } else if (profile.provider === "facebook") {
+    console.log("facebook");
     const foundUser = await User.findOne({ facebookId: profile.id });
 
     if (foundUser) {
@@ -71,6 +79,6 @@ const receiveUserProfile = async (req, res) => {
     }
   }
 
-  throw new CustomError.BadRequestError("Please provide providers information")
+  throw new CustomError.BadRequestError("Please provide providers information");
 };
 module.exports = { googleLogin, facebookLogin, receiveUserProfile };
