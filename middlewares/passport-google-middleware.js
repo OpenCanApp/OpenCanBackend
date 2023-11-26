@@ -5,7 +5,7 @@ const passport = require("passport");
 //   prompt: "select_account",
 // });
 
-const passportGoogleMiddleware = (req, res) => {
+const passportGoogleMiddleware = (req, res, next) => {
   const { linkingUri } = req.query;
   console.log(linkingUri);
   passport.authenticate("google", {
@@ -13,5 +13,6 @@ const passportGoogleMiddleware = (req, res) => {
     prompt: "select_account",
     state: linkingUri,
   });
+  next();
 };
 module.exports = passportGoogleMiddleware;

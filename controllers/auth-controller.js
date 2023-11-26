@@ -14,7 +14,7 @@ const googleLogin = async (req, res) => {
   };
   const userData = JSON.stringify(userDataObject);
   const linkingUri = req.query.state; 
-  const deepLinkUrl = `${linkingUri}data=${encodeURIComponent(userData)}`;
+  const deepLinkUrl = `${linkingUri}?data=${encodeURIComponent(userData)}`;
   res.redirect(deepLinkUrl);
 
   // res.status(StatusCodes.OK).json({ user: tokenUser, token, userData });
