@@ -94,25 +94,6 @@ const start = async () => {
     app.listen(port, () => {
       console.log(`The server is running on port: ${port}`);
     });
-
-    await getNews();
-    await getCurrencyRate();
-    await getTweet();
-
-    setInterval(async () => {
-      console.log("20 minutes Interval");
-      await getTweet();
-    }, 20 * 60 * 1000); // 20 minutes
-
-    setInterval(async () => {
-      console.log("1 Hour Interval");
-      await getNews();
-    }, 60 * 60 * 1000); // 1 hour
-
-    setInterval(async () => {
-      console.log("2 Hours Interval");
-      await getCurrencyRate();
-    }, 2 * 60 * 60 * 1000); // 2 hours
   } catch (err) {
     console.log(err);
   }
