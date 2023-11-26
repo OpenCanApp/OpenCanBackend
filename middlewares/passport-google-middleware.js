@@ -12,7 +12,6 @@ const passportGoogleMiddleware = (req, res, next) => {
     scope: ["profile", "email"],
     prompt: "select_account",
     state: linkingUri,
-  });
-  next();
+  })(req, res, next);
 };
 module.exports = passportGoogleMiddleware;
