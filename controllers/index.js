@@ -10,4 +10,5 @@ module.exports = {
   locationController: require("./location-controller"),
   commentController: require("./comment-controller"),
   tweetController: require("./tweet-controller"),
+  reportController: require("./report-controller"),
 };

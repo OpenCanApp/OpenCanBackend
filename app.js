@@ -37,6 +37,7 @@ const {
   locationRouter,
   commentRouter,
   tweetRouter,
+  reportRouter,
 } = require("./routes");
 // Middleware
 const { notFoundMiddleware, errorHandlerMiddleware } = require("./middlewares");
@@ -78,6 +79,7 @@ app.use("/api/currency", currencyRouter);
 app.use("/api/document", documentRouter);
 app.use("/api/location", locationRouter);
 app.use("/api/comment", commentRouter);
+app.use("/api/report", reportRouter);
 
 // Not Found Handler
 app.use(notFoundMiddleware);
