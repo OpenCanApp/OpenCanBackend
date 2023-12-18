@@ -11,14 +11,12 @@ const PostSchema = new mongoose.Schema(
     content: {
       type: String,
       required: [true, "Please provide content"],
-      minlength: 6,
     },
     category: {
       type: String,
-      enum: ["link", "second hand", "special"],
       required: [true, "Please provide category"],
     },
-    tag: {
+    tags: {
       type: [String],
     },
     user: {
