@@ -8,5 +8,6 @@ module.exports = {
   Document: require("./document-model"),
   Location: require("./location-model"),
   Comment: require("./comment-model"),
-  Tweet: require("./tweet-model")
+  Tweet: require("./tweet-model"),
+  Report: require("./report-model")
 };

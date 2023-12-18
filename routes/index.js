@@ -9,4 +9,5 @@ module.exports = {
   documentRouter: require("./document-route"),
   locationRouter: require("./location-route"),
   commentRouter: require("./comment-route"),
+  reportRouter: require("./report-route")
 };
