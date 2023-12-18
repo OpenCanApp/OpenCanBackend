@@ -13,7 +13,7 @@ const createPost = async (req, res) => {
   }
 
   if (req.body.tags) {
-    req.body.tags = req.body.tag.split(",").map((word) => word.trim());
+    req.body.tags = req.body.tags.split(",").map((word) => word.trim());
   }
 
   const newPost = await Post.create(req.body);
@@ -46,7 +46,11 @@ const getAllPosts = async (req, res) => {
   }
 
   // Tags
-
+  if(tags) {
+    let tagsArray = tags.split(",").map((tag) => new RegExp(tag, "i"));
+    console.log(tagsArray);
+    queryObject.tags = { $all: tagsArray}
+  }
 
   // Filter Category
   if (category) queryObject.category = category;
