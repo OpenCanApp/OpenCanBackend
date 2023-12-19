@@ -5,15 +5,15 @@ const { StatusCodes } = require("http-status-codes");
 const createPost = async (req, res) => {
   const { userId } = req.user;
   req.body.user = userId;
-  const { category, content } = req.body;
+  const { content } = req.body;
 
   // Check is it a link
-  if (category === "link" && !content.includes("https://")) {
-    throw new CustomError.BadRequestError(`Please provide valid telegram link`);
+  if (!content.includes("https://")) {
+    throw new CustomError.BadRequestError(`Please provide valid  link`);
   }
 
-  if (req.body.tag) {
-    req.body.tag = req.body.tag.split(",").map((word) => word.trim());
+  if (req.body.tags) {
+    req.body.tags = req.body.tags.split(",").map((word) => word.trim());
   }
 
   const newPost = await Post.create(req.body);
@@ -34,7 +34,7 @@ const getSinglePost = async (req, res) => {
 };
 
 const getAllPosts = async (req, res) => {
-  const { keyword, category, sort } = req.query;
+  const { keyword, category, sort, tags } = req.query;
   let queryObject = { isVerified: true };
 
   // Keyword Searching
@@ -43,6 +43,13 @@ const getAllPosts = async (req, res) => {
       { title: { $regex: keyword, $options: "i" } },
       { content: { $regex: keyword, $options: "i" } },
     ];
+  }
+
+  // Tags
+  if(tags) {
+    let tagsArray = tags.split(",").map((tag) => new RegExp(tag, "i"));
+    console.log(tagsArray);
+    queryObject.tags = { $all: tagsArray}
   }
 
   // Filter Category
